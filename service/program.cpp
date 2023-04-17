@@ -355,7 +355,6 @@ Program::configureImpl(int argc, char *argv[]
     genericCmdline.add_options()
         ("help", "produce help message")
         ("version,v", "display version and terminate")
-        ("licence", "display terms of licence")
         ("license", "display terms of license")
         ("config,f", po::value<Files>()
          , "path to configuration file; when using multiple config files "
@@ -457,7 +456,7 @@ Program::configureImpl(int argc, char *argv[]
         immediateExit(EXIT_SUCCESS);
     }
 
-    if (vm.count("licence") || vm.count("license")) {
+    if (vm.count("license")) {
         std::cout << copyright() << std::endl
                   << std::endl;
         const auto licensedTo(licensee());
